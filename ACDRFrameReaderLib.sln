@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACDRFrameReaderLib", "ACDRFrameReaderLib\ACDRFrameReaderLib.csproj", "{429C6BB6-E0F2-4560-9CBB-10CBAD0F2ECD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACDRFrameReaderLib.UnitTest", "ACDRFrameReaderLib.UnitTest\ACDRFrameReaderLib.UnitTest.csproj", "{E2629914-60FC-452B-98C6-263788454AC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigEndianReaderLib", "..\EthernetFrameReaderLib\BigEndianReaderLib\BigEndianReaderLib.csproj", "{15262632-8BDA-4DE3-A14C-A0506955947A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{429C6BB6-E0F2-4560-9CBB-10CBAD0F2ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{429C6BB6-E0F2-4560-9CBB-10CBAD0F2ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{429C6BB6-E0F2-4560-9CBB-10CBAD0F2ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2629914-60FC-452B-98C6-263788454AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2629914-60FC-452B-98C6-263788454AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2629914-60FC-452B-98C6-263788454AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2629914-60FC-452B-98C6-263788454AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15262632-8BDA-4DE3-A14C-A0506955947A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15262632-8BDA-4DE3-A14C-A0506955947A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15262632-8BDA-4DE3-A14C-A0506955947A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15262632-8BDA-4DE3-A14C-A0506955947A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
