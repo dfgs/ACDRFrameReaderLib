@@ -63,29 +63,50 @@ namespace ACDRFrameReaderLib.UnitTest
 			Assert.AreEqual(814, acdr.Header.SequenceNumber);
 			Assert.AreEqual(-1, acdr.Header.SourceID);
 			Assert.AreEqual(-1, acdr.Header.DestID);
+			Assert.AreEqual(8, acdr.Header.ExtraData);
+			Assert.AreEqual(TracePoints.System, acdr.Header.TracePoint);
+			Assert.AreEqual(MediaTypes.ACDR_SIP, acdr.Header.MediaType);
+			Assert.AreEqual(14, acdr.Header.HeaderExtensionLength);
+			
+			Assert.AreEqual("C62550:87:32", acdr.FullSessionID.ToString());
 
 
-			/*
-
-			// SenderInfo
-			Assert.AreEqual(3901249035u, acdr.SenderInfo.NTPTimeStampIntegerPart);
-			Assert.AreEqual(3012348327u, acdr.SenderInfo.NTPTimeStampFractionalPart);
-			Assert.AreEqual(44812u, acdr.SenderInfo.RTPTimeStamp);
-			Assert.AreEqual(247u, acdr.SenderInfo.SenderPacketCount);
-			Assert.AreEqual(39520u, acdr.SenderInfo.SenderOctetCount);
-
-			// ReceptionReport
-			Assert.AreEqual(1, acdr.ReceptionReports.Length);
-			Assert.AreEqual(2571709637u, acdr.ReceptionReports[0].SSRC);
-			Assert.AreEqual(0, acdr.ReceptionReports[0].FractionLost);
-			Assert.AreEqual(0u, acdr.ReceptionReports[0].CumulatedPacketLost);
-			Assert.AreEqual(0u, acdr.ReceptionReports[0].SequenceNumberCycles);
-			Assert.AreEqual(2173u, acdr.ReceptionReports[0].HighestSequenceNumberReceived);
-			Assert.AreEqual(4u, acdr.ReceptionReports[0].InterarrivalJitter);
-			Assert.AreEqual(0u, acdr.ReceptionReports[0].LastSRTimeStamp);
-			Assert.AreEqual(0u, acdr.ReceptionReports[0].DelaySinceLastSRTimeStamp);
-			//*/
 		}
+
+
+		[TestMethod]
+		public void ShouldReadACDR3()
+		{
+			ACDRReader reader;
+			ACDR acdr;
+
+			reader = new ACDRReader();
+
+			acdr = reader.Read(Consts.RTP);
+
+			// header
+			Assert.AreEqual(9, acdr.Header.Version);
+			Assert.AreEqual(231324277u, acdr.Header.TimeStamp);
+			Assert.AreEqual(1049, acdr.Header.SequenceNumber);
+			Assert.AreEqual(11, acdr.Header.SourceID);
+			Assert.AreEqual(11, acdr.Header.DestID);
+			Assert.AreEqual(0, acdr.Header.ExtraData);
+			Assert.AreEqual(TracePoints.VoipDecoder, acdr.Header.TracePoint);
+			Assert.AreEqual(MediaTypes.ACDR_RTP, acdr.Header.MediaType);
+			Assert.AreEqual(9, acdr.Header.HeaderExtensionLength);
+
+			Assert.AreEqual("C62550:87:32", acdr.FullSessionID.ToString());
+
+
+		}
+
+
+
+
+
+
+
+
 
 
 	}
