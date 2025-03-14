@@ -18,15 +18,22 @@ namespace ACDRFrameReaderLib
 			get;
 			private set;
 		}
+
+		public byte[] Extensions
+		{
+			get;
+			private set;
+		}
 		public byte[] Payload
 		{
 			get;
 			private set;
 		}
-		public ACDR(ACDRHeader Header,FullSessionID FullSessionID, byte[] Payload)
+		public ACDR(ACDRHeader Header,FullSessionID FullSessionID, byte[] Extensions, byte[] Payload)
 		{
-			if (Payload == null) throw new ArgumentNullException(nameof(Payload));
-			this.Header = Header;this.FullSessionID = FullSessionID; this.Payload = Payload;
+            if (Payload == null) throw new ArgumentNullException(nameof(Payload));
+            if (Extensions == null) throw new ArgumentNullException(nameof(Extensions));
+            this.Header = Header;this.FullSessionID = FullSessionID; this.Extensions = Extensions; this.Payload = Payload;
 
 		}
 

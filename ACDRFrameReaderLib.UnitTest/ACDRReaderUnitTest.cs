@@ -42,6 +42,7 @@ namespace ACDRFrameReaderLib.UnitTest
 			Assert.AreEqual(TracePoints.DspDecoder, acdr.Header.TracePoint);
 			Assert.AreEqual(MediaTypes.ACDR_RTP, acdr.Header.MediaType);
 			Assert.AreEqual(9, acdr.Header.HeaderExtensionLength);
+			Assert.AreEqual(9,acdr.Extensions.Length);
 			Assert.AreEqual("CD91EB:43:32054343", acdr.FullSessionID.ToString());
 
 
@@ -67,8 +68,9 @@ namespace ACDRFrameReaderLib.UnitTest
 			Assert.AreEqual(TracePoints.System, acdr.Header.TracePoint);
 			Assert.AreEqual(MediaTypes.ACDR_SIP, acdr.Header.MediaType);
 			Assert.AreEqual(14, acdr.Header.HeaderExtensionLength);
-			
-			Assert.AreEqual("C62550:87:32", acdr.FullSessionID.ToString());
+            Assert.AreEqual(14, acdr.Extensions.Length);
+
+            Assert.AreEqual("C62550:87:32", acdr.FullSessionID.ToString());
 
 
 		}
@@ -94,8 +96,9 @@ namespace ACDRFrameReaderLib.UnitTest
 			Assert.AreEqual(TracePoints.VoipDecoder, acdr.Header.TracePoint);
 			Assert.AreEqual(MediaTypes.ACDR_RTP, acdr.Header.MediaType);
 			Assert.AreEqual(9, acdr.Header.HeaderExtensionLength);
+            Assert.AreEqual(9, acdr.Extensions.Length);
 
-			Assert.AreEqual("C62550:87:32", acdr.FullSessionID.ToString());
+            Assert.AreEqual("C62550:87:32", acdr.FullSessionID.ToString());
 
 
 		}

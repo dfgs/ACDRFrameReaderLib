@@ -76,7 +76,7 @@ namespace ACDRFrameReaderLib
 			payload = Reader.ReadBytes(Reader.Length - Reader.Position);
 				//Data.Skip(28+headerExtensionLength).Take(Data.Length - 28-headerExtensionLength).ToArray();
 
-			return new ACDR(header,fullSessionID, payload);
+			return new ACDR(header,fullSessionID,headerExtensions, payload);
 
 
 		}

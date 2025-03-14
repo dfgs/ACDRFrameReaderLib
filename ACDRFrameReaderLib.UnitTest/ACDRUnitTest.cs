@@ -10,9 +10,13 @@ namespace ACDRFrameReaderLib.UnitTest
 		[TestMethod]
 		public void ShouldCheckIfPayloadIsNull()
 		{
-			Assert.ThrowsException<ArgumentNullException>(() => new ACDR(new ACDRHeader(),new FullSessionID(new BoardID(),0,new SessionID()), null));
+			Assert.ThrowsException<ArgumentNullException>(() => new ACDR(new ACDRHeader(),new FullSessionID(new BoardID(),0,new SessionID()), Array.Empty<byte>(), null));
 		}
+        [TestMethod]
+        public void ShouldCheckIExtensionIsNull()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() => new ACDR(new ACDRHeader(), new FullSessionID(new BoardID(), 0, new SessionID()), null, Array.Empty<byte>()));
+        }
 
-
-	}
+    }
 }
